@@ -1,0 +1,221 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Contact | PERAH DIGITAL MEDIA
+{% endblock %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="contact-hero">
+    <div class="contact-container">
+        <p class="section-label">CONTACT PERAH</p>
+
+        <h1>
+            Let's create something
+            meaningful together.
+        </h1>
+
+        <p>
+            Have a healthcare, science or technology story to communicate?
+            Let's turn complex ideas into clear, engaging and meaningful
+            digital experiences.
+        </p>
+    </div>
+</section>
+
+
+<section class="contact-main">
+
+    <div class="contact-container contact-grid">
+
+        <!-- Contact Information -->
+        <div class="contact-info">
+
+            <p class="section-label">START A CONVERSATION</p>
+
+            <h2>
+                Tell us what you are working on.
+            </h2>
+
+            <p>
+                Whether you are developing a healthcare campaign,
+                communicating scientific research, launching a health
+                technology product or looking for a stronger digital
+                strategy, we'd love to hear from you.
+            </p>
+
+
+            <div class="contact-details">
+
+                {% if settings and settings.email %}
+                <div class="contact-item">
+                    <span class="contact-icon">✉</span>
+
+                    <div>
+                        <span class="contact-label">Email</span>
+
+                        <a href="mailto:{{ settings.email }}">
+                            {{ settings.email }}
+                        </a>
+                    </div>
+                </div>
+                {% endif %}
+
+
+                {% if settings and settings.phone %}
+                <div class="contact-item">
+                    <span class="contact-icon">☎</span>
+
+                    <div>
+                        <span class="contact-label">Phone</span>
+
+                        <a href="tel:{{ settings.phone }}">
+                            {{ settings.phone }}
+                        </a>
+                    </div>
+                </div>
+                {% endif %}
+
+
+                {% if settings and settings.address %}
+                <div class="contact-item">
+                    <span class="contact-icon">⌖</span>
+
+                    <div>
+                        <span class="contact-label">Location</span>
+
+                        <p>{{ settings.address }}</p>
+                    </div>
+                </div>
+                {% endif %}
+
+            </div>
+
+        </div>
+
+
+        <!-- Contact CTA -->
+        <div class="contact-card">
+
+            <span class="contact-card-number">
+                01
+            </span>
+
+            <h3>
+                Start with a conversation.
+            </h3>
+
+            <p>
+                Share your idea, project or communication challenge
+                with us. We'll explore how PERAH can help bring it
+                to life.
+            </p>
+
+            {% if settings and settings.email %}
+            <a
+                href="mailto:{{ settings.email }}"
+                class="contact-button">
+                Email PERAH
+            </a>
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="contact-areas">
+
+    <div class="contact-container">
+
+        <div class="contact-heading">
+            <p class="section-label">WHAT WE CAN HELP WITH</p>
+
+            <h2>
+                From scientific ideas to digital experiences.
+            </h2>
+        </div>
+
+
+        <div class="contact-areas-grid">
+
+            <div class="contact-area">
+                <span>01</span>
+                <h3>Healthcare Communication</h3>
+                <p>
+                    Communicating healthcare information clearly
+                    and responsibly to the right audience.
+                </p>
+            </div>
+
+
+            <div class="contact-area">
+                <span>02</span>
+                <h3>Science Communication</h3>
+                <p>
+                    Turning complex scientific concepts and research
+                    into understandable digital content.
+                </p>
+            </div>
+
+
+            <div class="contact-area">
+                <span>03</span>
+                <h3>Digital Strategy</h3>
+                <p>
+                    Building digital communication strategies around
+                    organizational goals and audiences.
+                </p>
+            </div>
+
+
+            <div class="contact-area">
+                <span>04</span>
+                <h3>Content & Social Media</h3>
+                <p>
+                    Creating meaningful content and digital experiences
+                    for healthcare and science organizations.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="contact-final">
+
+    <div class="contact-container">
+
+        <p class="section-label">PERAH DIGITAL MEDIA</p>
+
+        <h2>
+            Science deserves to be understood.
+        </h2>
+
+        <p>
+            Let's communicate it with clarity, creativity and purpose.
+        </p>
+
+        {% if settings and settings.email %}
+        <a
+            href="mailto:{{ settings.email }}"
+            class="contact-button">
+            Start a Conversation
+        </a>
+        {% endif %}
+
+    </div>
+
+</section>
+
+{% endblock %}

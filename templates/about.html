@@ -1,0 +1,324 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+About Us | PERAH DIGITAL MEDIA
+{% endblock %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+<section class="about-hero">
+    <div class="about-container">
+
+        <p class="about-eyebrow">
+            ABOUT PERAH
+        </p>
+
+        <h1>
+            Where science meets
+            <span>digital communication.</span>
+        </h1>
+
+        <p class="about-hero-text">
+            PERAH DIGITAL MEDIA is a healthcare and science-focused
+            digital media company helping organizations communicate
+            complex ideas with clarity, creativity and purpose.
+        </p>
+
+    </div>
+</section>
+
+
+<section class="about-introduction">
+    <div class="about-container about-intro-grid">
+
+        <div class="about-intro-heading">
+            <p class="section-label">
+                WHO WE ARE
+            </p>
+
+            <h2>
+                Making complex knowledge
+                easier to understand.
+            </h2>
+        </div>
+
+        <div class="about-intro-content">
+
+            <p>
+                PERAH DIGITAL MEDIA works at the intersection of
+                healthcare, science and digital communication.
+            </p>
+
+            <p>
+                We help healthcare providers, pharmaceutical and
+                biotechnology companies, research organizations,
+                health-tech companies and other organizations in
+                the health and science ecosystem communicate their
+                ideas effectively.
+            </p>
+
+            <p>
+                Our work brings together scientific understanding,
+                healthcare knowledge and digital creativity to
+                transform complex information into communication
+                that is clear, engaging and meaningful.
+            </p>
+
+        </div>
+
+    </div>
+</section>
+
+
+<section class="about-purpose">
+    <div class="about-container">
+
+        <div class="purpose-heading">
+            <p class="section-label">
+                OUR PURPOSE
+            </p>
+
+            <h2>
+                Communication should make
+                knowledge more accessible.
+            </h2>
+        </div>
+
+        <div class="purpose-grid">
+
+            <article class="purpose-card">
+                <span class="purpose-number">01</span>
+
+                <h3>
+                    Clarity
+                </h3>
+
+                <p>
+                    We turn complex scientific and healthcare
+                    information into communication that audiences
+                    can understand and engage with.
+                </p>
+            </article>
+
+
+            <article class="purpose-card">
+                <span class="purpose-number">02</span>
+
+                <h3>
+                    Creativity
+                </h3>
+
+                <p>
+                    We use modern digital communication and creative
+                    thinking to give important ideas a stronger
+                    presence.
+                </p>
+            </article>
+
+
+            <article class="purpose-card">
+                <span class="purpose-number">03</span>
+
+                <h3>
+                    Responsibility
+                </h3>
+
+                <p>
+                    We believe communication involving healthcare
+                    and science should be accurate, responsible and
+                    audience focused.
+                </p>
+            </article>
+
+        </div>
+
+    </div>
+</section>
+
+
+<section class="about-focus">
+    <div class="about-container focus-grid">
+
+        <div class="focus-heading">
+
+            <p class="section-label">
+                OUR FOCUS
+            </p>
+
+            <h2>
+                Healthcare.
+                Science.
+                Technology.
+            </h2>
+
+        </div>
+
+        <div class="focus-content">
+
+            <div class="focus-item">
+                <h3>Healthcare</h3>
+                <p>
+                    Helping healthcare organizations communicate
+                    information, services and ideas clearly.
+                </p>
+            </div>
+
+            <div class="focus-item">
+                <h3>Life Sciences</h3>
+                <p>
+                    Supporting pharmaceutical, biotechnology and
+                    life science organizations with meaningful
+                    digital communication.
+                </p>
+            </div>
+
+            <div class="focus-item">
+                <h3>Research</h3>
+                <p>
+                    Translating research and scientific knowledge
+                    into communication that can reach wider
+                    audiences.
+                </p>
+            </div>
+
+            <div class="focus-item">
+                <h3>Technology</h3>
+                <p>
+                    Connecting health and science innovation with
+                    modern digital experiences.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<section class="about-approach">
+
+    <div class="about-container approach-grid">
+
+        <div class="approach-heading">
+
+            <p class="section-label">
+                OUR APPROACH
+            </p>
+
+            <h2>
+                Scientific understanding.
+                Creative communication.
+            </h2>
+
+        </div>
+
+        <div class="approach-content">
+
+            <p>
+                We begin by understanding the subject, the audience
+                and the purpose behind the communication.
+            </p>
+
+            <p>
+                From there, we combine scientific understanding
+                with creative digital thinking to develop content,
+                campaigns and digital experiences that communicate
+                with purpose.
+            </p>
+
+            <p>
+                The goal is not simply to make information look good.
+                It is to make important information easier to
+                understand, remember and engage with.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+{% if founder %}
+
+<section class="about-founder">
+
+    <div class="about-container founder-grid">
+
+        <div class="founder-image">
+
+            {% if founder.image %}
+                <img
+                    src="{{ founder.image.url }}"
+                    alt="{{ founder.name }}"
+                >
+            {% else %}
+                <div class="founder-placeholder">
+                    <span>PERAH</span>
+                </div>
+            {% endif %}
+
+        </div>
+
+
+        <div class="founder-content">
+
+            <p class="section-label">
+                THE FOUNDER
+            </p>
+
+            <h2>
+                {{ founder.name }}
+            </h2>
+
+            {% if founder.position %}
+                <p class="founder-position">
+                    {{ founder.position }}
+                </p>
+            {% endif %}
+
+            <p>
+                {{ founder.bio }}
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endif %}
+
+
+<section class="about-cta">
+
+    <div class="about-container">
+
+        <p class="section-label">
+            LET'S WORK TOGETHER
+        </p>
+
+        <h2>
+            Have a healthcare, science or
+            technology story to communicate?
+        </h2>
+
+        <p>
+            Let's create something meaningful together.
+        </p>
+
+        <a href="{% url 'home' %}" class="about-button">
+            Explore PERAH
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

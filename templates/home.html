@@ -1,0 +1,756 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+PERAH DIGITAL MEDIA | Science, Healthcare & Digital Communication
+{% endblock %}
+
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+<!-- ==================================================
+     HERO
+================================================== -->
+
+<section class="hero">
+
+    <div class="hero-container">
+
+        <div class="hero-content">
+
+            <p class="hero-eyebrow">
+                PERAH DIGITAL MEDIA
+            </p>
+
+            <h1>
+                Scientific credibility.
+                <br>
+                Healthcare understanding.
+                <br>
+                Digital creativity.
+            </h1>
+
+            <p class="hero-description">
+                We bridge science, healthcare and digital communication
+                to help organizations share complex ideas with clarity,
+                creativity and purpose.
+            </p>
+
+            <div class="hero-actions">
+
+                <a href="#" class="btn btn-primary">
+                    Explore Our Services
+                </a>
+
+                <a href="#" class="btn btn-secondary">
+                    View Our Work
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="hero-visual">
+            <img
+                src="{% static 'images/hero-science-digital.jpg' %}"
+                alt="Science and digital communication"
+            >
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     INTRODUCTION
+================================================== -->
+
+<section class="intro-section">
+
+    <div class="section-container">
+
+        <div class="section-heading">
+
+            <p class="section-label">
+                WHAT WE DO
+            </p>
+
+            <h2>
+                Connecting scientific knowledge
+                with modern digital communication.
+            </h2>
+
+        </div>
+
+
+        <div class="intro-content">
+
+            <p>
+                PERAH DIGITAL MEDIA is a healthcare and science-focused
+                digital media company working across healthcare,
+                life sciences, research, technology and digital
+                communication.
+            </p>
+
+            <p>
+                We help organizations transform complex ideas into
+                communication that is clear, engaging and meaningful.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     THREE CORE PILLARS
+================================================== -->
+
+<section class="pillars-section">
+
+    <div class="section-container">
+
+        <div class="section-heading centered">
+
+            <p class="section-label">
+                THE PERAH DIFFERENCE
+            </p>
+
+            <h2>
+                Where science meets digital creativity.
+            </h2>
+
+        </div>
+
+
+        <div class="pillars-grid">
+
+            <article class="pillar-card">
+
+                <span class="pillar-number">
+                    01
+                </span>
+
+                <h3>
+                    Scientific Credibility
+                </h3>
+
+                <p>
+                    We value scientific understanding, accuracy
+                    and responsible communication when working
+                    with complex information.
+                </p>
+
+            </article>
+
+
+            <article class="pillar-card">
+
+                <span class="pillar-number">
+                    02
+                </span>
+
+                <h3>
+                    Healthcare Understanding
+                </h3>
+
+                <p>
+                    We understand the complexity of healthcare
+                    communication and the importance of reaching
+                    audiences with clarity and purpose.
+                </p>
+
+            </article>
+
+
+            <article class="pillar-card">
+
+                <span class="pillar-number">
+                    03
+                </span>
+
+                <h3>
+                    Digital Creativity
+                </h3>
+
+                <p>
+                    We use creative digital communication to turn
+                    complex ideas into engaging experiences.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     SERVICES
+================================================== -->
+
+<section class="services-section">
+
+    <div class="section-container">
+
+        <div class="section-heading">
+
+            <p class="section-label">
+                OUR SERVICES
+            </p>
+
+            <h2>
+                Communication built around
+                science and healthcare.
+            </h2>
+
+        </div>
+
+
+        <div class="services-grid">
+
+            {% for service in services %}
+
+                <article class="service-card">
+
+                    {% if service.image %}
+                        <div class="service-image">
+                            <img
+                                src="{{ service.image.url }}"
+                                alt="{{ service.name }}"
+                            >
+                        </div>
+                    {% endif %}
+
+                    <div class="service-content">
+
+                        <h3>
+                            {{ service.name }}
+                        </h3>
+
+                        <p>
+                            {{ service.description }}
+                        </p>
+
+                        <a href="#">
+                            Learn More →
+                        </a>
+
+                    </div>
+
+                </article>
+
+            {% empty %}
+
+                <article class="service-card">
+
+                    <div class="service-content">
+
+                        <h3>
+                            Digital Marketing
+                        </h3>
+
+                        <p>
+                            Digital marketing solutions designed
+                            for healthcare and science organizations.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <article class="service-card">
+
+                    <div class="service-content">
+
+                        <h3>
+                            Science Communication
+                        </h3>
+
+                        <p>
+                            Clear and engaging communication of
+                            scientific and healthcare information.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <article class="service-card">
+
+                    <div class="service-content">
+
+                        <h3>
+                            Content Creation
+                        </h3>
+
+                        <p>
+                            Purpose-driven content for complex
+                            healthcare and scientific subjects.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            {% endfor %}
+
+        </div>
+
+
+        <div class="section-action">
+
+            <a href="#" class="text-link">
+                Explore All Services →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     APPROACH
+================================================== -->
+
+<section class="approach-section">
+
+    <div class="section-container">
+
+        <div class="approach-grid">
+
+            <div class="approach-heading">
+
+                <p class="section-label">
+                    OUR APPROACH
+                </p>
+
+                <h2>
+                    Making complex information
+                    easier to understand.
+                </h2>
+
+            </div>
+
+
+            <div class="approach-content">
+
+                <p class="large-text">
+                    We combine scientific understanding with
+                    creative digital communication to turn
+                    complex information into content that is
+                    clear, engaging and meaningful.
+                </p>
+
+                <p>
+                    From strategy and content creation to digital
+                    campaigns and communication experiences,
+                    our approach is built around understanding
+                    both the subject and the audience.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     WHO WE SERVE
+================================================== -->
+
+<section class="audience-section">
+
+    <div class="section-container">
+
+        <div class="section-heading centered">
+
+            <p class="section-label">
+                WHO WE SERVE
+            </p>
+
+            <h2>
+                Built for the health and science ecosystem.
+            </h2>
+
+        </div>
+
+
+        <div class="audience-grid">
+
+            <div class="audience-item">
+                Healthcare Providers
+            </div>
+
+            <div class="audience-item">
+                Pharmaceutical Companies
+            </div>
+
+            <div class="audience-item">
+                Biotechnology Companies
+            </div>
+
+            <div class="audience-item">
+                Research Organizations
+            </div>
+
+            <div class="audience-item">
+                Health-Tech Companies
+            </div>
+
+            <div class="audience-item">
+                Science & Healthcare Organizations
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     WHY PERAH
+================================================== -->
+
+<section class="why-section">
+
+    <div class="section-container">
+
+        <div class="why-grid">
+
+            <div class="why-heading">
+
+                <p class="section-label">
+                    WHY PERAH
+                </p>
+
+                <h2>
+                    Communication should be
+                    accurate, responsible
+                    and audience-focused.
+                </h2>
+
+            </div>
+
+
+            <div class="why-content">
+
+                <p>
+                    Healthcare and scientific communication requires
+                    more than attractive content. It requires an
+                    understanding of the subject, the audience and
+                    the responsibility that comes with communicating
+                    important information.
+                </p>
+
+                <p>
+                    PERAH brings these disciplines together to create
+                    digital communication with purpose.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     OUR WORK
+================================================== -->
+
+<section class="work-section">
+
+    <div class="section-container">
+
+        <div class="section-heading">
+
+            <p class="section-label">
+                OUR WORK
+            </p>
+
+            <h2>
+                Ideas transformed into
+                digital experiences.
+            </h2>
+
+        </div>
+
+
+        <div class="work-grid">
+
+            {% for project in projects %}
+
+                <article class="project-card">
+
+                    {% if project.image %}
+                        <div class="project-image">
+
+                            <img
+                                src="{{ project.image.url }}"
+                                alt="{{ project.title }}"
+                            >
+
+                        </div>
+                    {% endif %}
+
+                    <div class="project-content">
+
+                        <h3>
+                            {{ project.title }}
+                        </h3>
+
+                        {% if project.client %}
+                            <span>
+                                {{ project.client }}
+                            </span>
+                        {% endif %}
+
+                        <p>
+                            {{ project.description }}
+                        </p>
+
+                    </div>
+
+                </article>
+
+            {% empty %}
+
+                <p class="empty-message">
+                    Our selected projects will appear here.
+                </p>
+
+            {% endfor %}
+
+        </div>
+
+
+        <div class="section-action">
+
+            <a href="#" class="text-link">
+                Explore Our Work →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     INSIGHTS
+================================================== -->
+
+<section class="insights-section">
+
+    <div class="section-container">
+
+        <div class="section-heading">
+
+            <p class="section-label">
+                PERAH INSIGHTS
+            </p>
+
+            <h2>
+                Ideas, knowledge and perspectives.
+            </h2>
+
+        </div>
+
+
+        <div class="insights-grid">
+
+            {% for article in articles %}
+
+                {% if article.published %}
+
+                    <article class="article-card">
+
+                        {% if article.image %}
+                            <div class="article-image">
+
+                                <img
+                                    src="{{ article.image.url }}"
+                                    alt="{{ article.title }}"
+                                >
+
+                            </div>
+                        {% endif %}
+
+                        <div class="article-content">
+
+                            <h3>
+                                {{ article.title }}
+                            </h3>
+
+                            <p>
+                                {{ article.content|truncatewords:25 }}
+                            </p>
+
+                            <a href="#">
+                                Read Insight →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                {% endif %}
+
+            {% empty %}
+
+                <p class="empty-message">
+                    PERAH Insights will appear here.
+                </p>
+
+            {% endfor %}
+
+        </div>
+
+
+        <div class="section-action">
+
+            <a href="#" class="text-link">
+                Explore PERAH Insights →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     FOUNDER
+================================================== -->
+
+<section class="founder-section">
+
+    <div class="section-container">
+
+        {% for founder in founders %}
+
+            <div class="founder-grid">
+
+                {% if founder.image %}
+                    <div class="founder-image">
+
+                        <img
+                            src="{{ founder.image.url }}"
+                            alt="{{ founder.name }}"
+                        >
+
+                    </div>
+                {% endif %}
+
+
+                <div class="founder-content">
+
+                    <p class="section-label">
+                        THE VISION BEHIND PERAH
+                    </p>
+
+                    <h2>
+                        Connecting scientific knowledge
+                        with modern digital communication.
+                    </h2>
+
+                    <h3>
+                        {{ founder.name }}
+                    </h3>
+
+                    <p class="founder-position">
+                        {{ founder.position }}
+                    </p>
+
+                    <p>
+                        {{ founder.bio }}
+                    </p>
+
+                    <a href="#">
+                        Meet the Founder →
+                    </a>
+
+                </div>
+
+            </div>
+
+        {% empty %}
+
+            <div class="founder-placeholder">
+
+                <p class="section-label">
+                    THE VISION BEHIND PERAH
+                </p>
+
+                <h2>
+                    Connecting scientific knowledge
+                    with modern digital communication.
+                </h2>
+
+                <p>
+                    PERAH DIGITAL MEDIA was founded with a vision
+                    to connect scientific knowledge with modern
+                    digital communication and make healthcare and
+                    science more accessible.
+                </p>
+
+            </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     FINAL CTA
+================================================== -->
+
+<section class="cta-section">
+
+    <div class="cta-container">
+
+        <p class="section-label">
+            LET'S CREATE SOMETHING MEANINGFUL
+        </p>
+
+        <h2>
+            Have a healthcare, science or
+            technology story to communicate?
+        </h2>
+
+        <p>
+            Let's create something meaningful together.
+        </p>
+
+        <a href="#" class="btn btn-light">
+            Start a Conversation
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

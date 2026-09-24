@@ -1,0 +1,225 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+PERAH Insights | PERAH DIGITAL MEDIA
+{% endblock %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/insights.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+<section class="insights-hero">
+
+    <div class="insights-container">
+
+        <p class="insights-eyebrow">
+            PERAH INSIGHTS
+        </p>
+
+        <h1>
+            Ideas, knowledge and
+            perspectives worth sharing.
+        </h1>
+
+        <p class="insights-hero-text">
+            Explore insights and educational content across
+            healthcare, science, life sciences, research,
+            technology and digital communication.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="insights-list">
+
+    <div class="insights-container">
+
+        <div class="insights-heading">
+
+            <p class="section-label">
+                LATEST INSIGHTS
+            </p>
+
+            <h2>
+                Knowledge made meaningful.
+            </h2>
+
+        </div>
+
+
+        {% if articles %}
+
+        <div class="articles-grid">
+
+            {% for article in articles %}
+
+            <article class="article-card">
+
+                {% if article.image %}
+
+                <div class="article-image">
+                    <img
+                        src="{{ article.image.url }}"
+                        alt="{{ article.title }}"
+                    >
+                </div>
+
+                {% else %}
+
+                <div class="article-image article-placeholder">
+                    <span>PERAH</span>
+                </div>
+
+                {% endif %}
+
+
+                <div class="article-content">
+
+                    <div class="article-date">
+                        {{ article.created_at|date:"F d, Y" }}
+                    </div>
+
+                    <h3>
+                        {{ article.title }}
+                    </h3>
+
+                    <p>
+                        {{ article.content|truncatewords:30 }}
+                    </p>
+
+                    <a
+                        href="{% url 'insight_detail' article.id %}"
+                        class="article-link"
+                    >
+                        Read Insight
+                        <span>→</span>
+                    </a>
+
+                </div>
+
+            </article>
+
+            {% endfor %}
+
+        </div>
+
+        {% else %}
+
+        <div class="insights-empty">
+
+            <p class="section-label">
+                COMING SOON
+            </p>
+
+            <h2>
+                Our insights are on the way.
+            </h2>
+
+            <p>
+                We are preparing articles, perspectives and
+                educational content covering healthcare,
+                science and digital communication.
+            </p>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</section>
+
+
+<section class="insights-topics">
+
+    <div class="insights-container">
+
+        <div class="topics-heading">
+
+            <p class="section-label">
+                TOPICS
+            </p>
+
+            <h2>
+                Exploring the ideas
+                shaping our world.
+            </h2>
+
+        </div>
+
+
+        <div class="topics-grid">
+
+            <div class="topic">
+                <span>01</span>
+                <h3>Healthcare</h3>
+            </div>
+
+            <div class="topic">
+                <span>02</span>
+                <h3>Science</h3>
+            </div>
+
+            <div class="topic">
+                <span>03</span>
+                <h3>Life Sciences</h3>
+            </div>
+
+            <div class="topic">
+                <span>04</span>
+                <h3>Research</h3>
+            </div>
+
+            <div class="topic">
+                <span>05</span>
+                <h3>Technology</h3>
+            </div>
+
+            <div class="topic">
+                <span>06</span>
+                <h3>Digital Communication</h3>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="insights-cta">
+
+    <div class="insights-container">
+
+        <p class="section-label">
+            KEEP EXPLORING
+        </p>
+
+        <h2>
+            Good communication
+            starts with understanding.
+        </h2>
+
+        <p>
+            Discover how PERAH combines scientific understanding
+            with digital creativity.
+        </p>
+
+        <a
+            href="{% url 'services' %}"
+            class="insights-button"
+        >
+            Explore Our Services
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

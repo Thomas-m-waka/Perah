@@ -1,0 +1,294 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Services | PERAH DIGITAL MEDIA
+{% endblock %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/services.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+<section class="services-hero">
+    <div class="services-container">
+
+        <p class="services-eyebrow">
+            OUR SERVICES
+        </p>
+
+        <h1>
+            Digital communication
+            for science and healthcare.
+        </h1>
+
+        <p class="services-hero-text">
+            We combine scientific understanding, healthcare
+            knowledge and digital creativity to help organizations
+            communicate complex ideas clearly and meaningfully.
+        </p>
+
+    </div>
+</section>
+
+
+<section class="services-introduction">
+
+    <div class="services-container services-intro-grid">
+
+        <div>
+            <p class="section-label">
+                WHAT WE DO
+            </p>
+
+            <h2>
+                Communication built
+                around your purpose.
+            </h2>
+        </div>
+
+        <div class="services-intro-content">
+
+            <p>
+                Every organization has something important to
+                communicate. Our role is to understand that message,
+                understand the audience and build the right digital
+                approach around it.
+            </p>
+
+            <p>
+                Our services are designed for organizations working
+                across healthcare, life sciences, research,
+                technology and the wider health and science ecosystem.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="services-list">
+
+    <div class="services-container">
+
+        <div class="services-heading">
+
+            <p class="section-label">
+                OUR CAPABILITIES
+            </p>
+
+            <h2>
+                What we can help you communicate.
+            </h2>
+
+        </div>
+
+
+        {% if services %}
+
+        <div class="services-grid">
+
+            {% for service in services %}
+
+            <article class="service-card">
+
+                <div class="service-number">
+                    {{ forloop.counter|stringformat:"02d" }}
+                </div>
+
+                {% if service.image %}
+                <div class="service-image">
+                    <img
+                        src="{{ service.image.url }}"
+                        alt="{{ service.name }}"
+                    >
+                </div>
+                {% endif %}
+
+                <div class="service-content">
+
+                    <h3>
+                        {{ service.name }}
+                    </h3>
+
+                    <p>
+                        {{ service.description }}
+                    </p>
+
+                </div>
+
+            </article>
+
+            {% endfor %}
+
+        </div>
+
+        {% else %}
+
+        <div class="services-empty">
+
+            <h3>
+                Our services are coming soon.
+            </h3>
+
+            <p>
+                We are currently preparing our service offerings.
+            </p>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</section>
+
+
+<section class="services-approach">
+
+    <div class="services-container approach-grid">
+
+        <div>
+
+            <p class="section-label">
+                OUR APPROACH
+            </p>
+
+            <h2>
+                Strategy before
+                communication.
+            </h2>
+
+        </div>
+
+        <div class="approach-content">
+
+            <p>
+                We do not believe in applying the same digital
+                solution to every organization.
+            </p>
+
+            <p>
+                We first understand your objectives, audience,
+                subject matter and communication environment.
+                Then we develop a digital approach that fits.
+            </p>
+
+            <p>
+                The result is communication that is not only
+                creative, but also relevant, responsible and
+                purposeful.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="services-audience">
+
+    <div class="services-container">
+
+        <div class="audience-heading">
+
+            <p class="section-label">
+                WHO WE WORK WITH
+            </p>
+
+            <h2>
+                Built for the health
+                and science ecosystem.
+            </h2>
+
+        </div>
+
+        <div class="audience-grid">
+
+            <div class="audience-item">
+                <h3>Healthcare Providers</h3>
+                <p>
+                    Digital communication for healthcare
+                    organizations and professionals.
+                </p>
+            </div>
+
+            <div class="audience-item">
+                <h3>Pharmaceutical Companies</h3>
+                <p>
+                    Clear and responsible communication for
+                    pharmaceutical organizations.
+                </p>
+            </div>
+
+            <div class="audience-item">
+                <h3>Biotechnology</h3>
+                <p>
+                    Digital communication that helps explain
+                    innovation and scientific ideas.
+                </p>
+            </div>
+
+            <div class="audience-item">
+                <h3>Research Organizations</h3>
+                <p>
+                    Making research and scientific knowledge
+                    accessible to wider audiences.
+                </p>
+            </div>
+
+            <div class="audience-item">
+                <h3>Health Technology</h3>
+                <p>
+                    Connecting technology, healthcare and
+                    digital communication.
+                </p>
+            </div>
+
+            <div class="audience-item">
+                <h3>Science Organizations</h3>
+                <p>
+                    Helping science-focused organizations
+                    communicate with clarity and purpose.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="services-cta">
+
+    <div class="services-container">
+
+        <p class="section-label">
+            HAVE A PROJECT?
+        </p>
+
+        <h2>
+            Let's turn your ideas
+            into meaningful communication.
+        </h2>
+
+        <p>
+            Tell us what you are trying to communicate and
+            let's explore what we can create together.
+        </p>
+
+        <a href="{% url 'home' %}" class="services-button">
+            Start a Conversation
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

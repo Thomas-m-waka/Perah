@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+{{ article.title }} | PERAH DIGITAL MEDIA
+{% endblock %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/insights.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+<article class="insight-detail">
+
+    <div class="insight-detail-container">
+
+        <a
+            href="{% url 'insights' %}"
+            class="back-link"
+        >
+            ← Back to Insights
+        </a>
+
+
+        <div class="insight-header">
+
+            <p class="insight-date">
+                {{ article.created_at|date:"F d, Y" }}
+            </p>
+
+            <h1>
+                {{ article.title }}
+            </h1>
+
+        </div>
+
+
+        {% if article.image %}
+
+        <div class="insight-featured-image">
+
+            <img
+                src="{{ article.image.url }}"
+                alt="{{ article.title }}"
+            >
+
+        </div>
+
+        {% endif %}
+
+
+        <div class="insight-body">
+
+            {{ article.content|linebreaks }}
+
+        </div>
+
+
+        <div class="insight-footer">
+
+            <a
+                href="{% url 'insights' %}"
+                class="back-link"
+            >
+                ← Back to Insights
+            </a>
+
+        </div>
+
+    </div>
+
+</article>
+
+
+<section class="insight-detail-cta">
+
+    <div class="insights-container">
+
+        <p class="section-label">
+            PERAH DIGITAL MEDIA
+        </p>
+
+        <h2>
+            Have an idea worth communicating?
+        </h2>
+
+        <a
+            href="{% url 'services' %}"
+            class="insights-button"
+        >
+            Explore Our Services
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}
